@@ -1,3 +1,4 @@
-# DjangoRasaChat
+# Rasa chatbot
 
 RASA CHAT BOT + DJANGO (NODE SOCKET)
+
