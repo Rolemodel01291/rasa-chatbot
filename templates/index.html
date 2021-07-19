@@ -1,0 +1,74 @@
+{% load static %}
+{% load pll_extras %}
+<html>
+   <head>
+      <title>Django Rasa Sockets</title>
+      <meta name=viewport content="width=device-width, initial-scale=1">
+      <link rel="icon" type="image/png" href="http://ashwinshenoy.com/img/favicon.png">
+      <!-- CSS -->
+      <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      
+   </head>
+   <body>
+      <div class="container">
+         <div class="row">
+            <h1 class="text-left mt-5">Rasa Bot</h1>
+         </div>
+         <div class="row content">
+            
+            <div class="col-5">
+               <div class="report">
+                  <div class="form-group shadow-textarea">
+                     <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3">
+                     {{report.report_content}}
+                     </textarea>
+                  </div>
+                  <div class='chat_container'>
+                     <mybot></mybot>
+                  </div>
+               </div>
+            </div>
+            <div class="col-7 headmap">
+               <div class="table-responsive">
+                  <table class="table table-bordered">
+                     <thead>
+                        <tr>
+                           <th scope="col"></th>
+                           <th scope="col">LINEAR_ REGRESSION</th>
+                           <th scope="col">LOGISTIC_ REGRESSION</th>
+                           <th scope="col">LSTM_1</th>
+                           <th scope="col">LSTM_2</th>
+                           <th scope="col">LDS_190101</th>
+                           <th scope="col">REL_VAL_1</th>
+                           <th scope="col">M2</th>
+                           <th scope="col">SUMMARY SC_SCORE</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        {% for head_map in heat_maps %}
+                        <tr>
+                           <th scope="row">{{head_map.ticker_db}}</th>
+                           <td style="background-color: rgba({{ head_map.LINEAR_REGRESSION|redcolor}},{{ head_map.LINEAR_REGRESSION|greencolor}},10);">{{head_map.LINEAR_REGRESSION}}</td>
+                           <td style="background-color: rgba({{ head_map.LOGISTIC_REGRESSION|redcolor}},{{ head_map.LOGISTIC_REGRESSION|greencolor}},10);">{{head_map.LOGISTIC_REGRESSION}}</td>
+                           <td style="background-color: rgba({{ head_map.LSTM_1|redcolor}},{{ head_map.LSTM_1|greencolor}},10);">{{head_map.LSTM_1}}</td>
+                           <td style="background-color: rgba({{ head_map.LSTM_2|redcolor}},{{ head_map.LSTM_2|greencolor}},10);">{{head_map.LSTM_2}}</td>
+                           <td style="background-color: rgba({{ head_map.LDS_190101|redcolor}},{{ head_map.LDS_190101|greencolor}},10);">{{head_map.LDS_190101}}</td>
+                           <td style="background-color: rgba({{ head_map.REL_VAL_1|redcolor}},{{ head_map.REL_VAL_1|greencolor}},10);">{{head_map.REL_VAL_1}}</td>
+                           <td style="background-color: rgba({{ head_map.M2|redcolor}},{{ head_map.M2|greencolor}},10);">{{head_map.M2}}</td>
+                           <td style="background-color: rgba({{ head_map.SUMMARY_SC_SCORE|redcolor}},{{ head_map.SUMMARY_SC_SCORE|greencolor}},10);">{{head_map.SUMMARY_SC_SCORE}}</td>
+                        </tr>
+                        {% endfor %} 
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+      <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+      <script src="{% static 'js/script.js' %}"></script>
+      <script src="{% static 'js/bundle.js' %}"></script>
+   </body>
+</html>

@@ -1,0 +1,2 @@
+model_checkpoint_path: "G:\\myproject\\python\\Django+rasachatbot\\Django-Rasa-Sockets\\rasachat\\models/nlu/default\\model_20190706-105555\\component_5_EmbeddingIntentClassifier.ckpt"
+all_model_checkpoint_paths: "G:\\myproject\\python\\Django+rasachatbot\\Django-Rasa-Sockets\\rasachat\\models/nlu/default\\model_20190706-105555\\component_5_EmbeddingIntentClassifier.ckpt"

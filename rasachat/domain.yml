@@ -1,0 +1,36 @@
+intents:
+  - greet
+  - goodbye
+  - mood_unhappy
+  - mood_affirm
+  - mood_deny
+  - mood_great
+  - get_garan
+
+actions:
+  - utter_greet
+  - utter_happy
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_goodbye
+  - utter_get_garan
+
+templates:
+  utter_greet:
+    - text: "Hey! How are you ?"
+
+  utter_happy:
+    - text: "Great! Carry on..."
+
+  utter_cheer_up:
+    - text: "Here is something to cheer you up!"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Did that help you ?"
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_get_garan:
+    - text: "Just a sec... Let me show it"
